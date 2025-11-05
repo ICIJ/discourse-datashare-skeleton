@@ -2,7 +2,7 @@
 
 module DiscourseDatashare
   class TopicsController < ::ApplicationController
-    requires_plugin DiscourseDatashare::PLUGIN_NAME
+    requires_plugin PLUGIN_NAME
     before_action :ensure_logged_in
 
     def show
