@@ -42,7 +42,12 @@ after_initialize do
   # through the category serializer defined below.
   register_preloaded_category_custom_fields(::DiscourseDatashare::CATEGORY_CREATED_BY_FIELD)
 
-  add_to_serializer(:basic_category, :created_by_dataconnect) do
+  add_to_serializer(
+    :basic_category, 
+    :created_by_dataconnect,
+    # This condition ensures that the custom field is only included 
+    # for the BasicCategorySerializer and not for children serializers.
+    include_condition: -> { self.instance_of? BasicCategorySerializer }) do
     !!object.custom_fields[::DiscourseDatashare::CATEGORY_CREATED_BY_FIELD]
   end
 
