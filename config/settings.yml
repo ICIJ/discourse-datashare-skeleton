@@ -1,8 +1,8 @@
 plugins:
-  discourse_datashare_enabled:
+  datashare_enabled:
     default: true
     client: true
-  discourse_datashare_create_category_groups:
+  datashare_create_category_groups:
     default: "0" # everyone
     type: group_list
     allow_any: false

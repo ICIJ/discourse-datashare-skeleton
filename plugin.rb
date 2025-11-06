@@ -7,7 +7,7 @@
 # required_version: 3.4.0
 
 
-enabled_site_setting :discourse_datashare_enabled
+enabled_site_setting :datashare_enabled
 
 module ::DiscourseDatashare  
   PLUGIN_NAME = 'discourse-datashare'.freeze
