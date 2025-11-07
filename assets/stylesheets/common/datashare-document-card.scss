@@ -1,0 +1,35 @@
+.datashare-document-card {
+  display: flex;
+  flex-direction: row;
+  padding-block: var(--space-3);
+  padding-right: var(--space-3);
+  gap: var(--space-3);
+  background: var(--primary-very-low);
+  border: 1px solid var(--content-border-color);
+  border-radius: var(--d-border-radius);
+  margin-bottom:  1rem;
+  align-items: center;
+  max-width: calc(var(--topic-body-width) + var(--topic-avatar-width));
+
+  &__icon {
+    width: var(--topic-avatar-width);
+    color: var(--primary-medium);color: var(--primary-high);
+    text-align: right;
+    font-size: 1.75rem;
+  }
+
+  &__link {
+    font-weight: bold;
+    display: flex;
+    min-width: 0;
+    gap: 0.33rem;
+    align-items: center;
+    text-wrap: nowrap;
+    flex-grow: 1;
+    overflow: hidden;
+
+    &__icon {
+      color: var(--primary-medium);
+    }
+  }
+}

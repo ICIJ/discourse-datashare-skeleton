@@ -10,7 +10,7 @@ module DiscourseDatashare
       scope :created_by_dataconnect, -> {
         where(id: 
           CategoryCustomField
-            .where(name: DiscourseDatashare::CATEGORY_CREATED_BY_FIELD, value: 'true')
+            .where(name: CATEGORY_CREATED_BY_FIELD, value: 'true')
             .select(:category_id)
         )
       }
