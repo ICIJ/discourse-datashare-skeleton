@@ -7,13 +7,15 @@
   background: var(--primary-very-low);
   border: 1px solid var(--content-border-color);
   border-radius: var(--d-border-radius);
-  margin-bottom:  1rem;
+  margin-bottom: 1rem;
   align-items: center;
-  max-width: calc(var(--topic-body-width) + var(--topic-avatar-width) + var(--space-3));
+  max-width: calc(
+    var(--topic-body-width) + var(--topic-avatar-width) + var(--space-3)
+  );
 
   &__icon {
     width: var(--topic-avatar-width);
-    color: var(--primary-medium);color: var(--primary-high);
+    color: var(--primary-high);
     text-align: right;
     font-size: 1.75rem;
   }

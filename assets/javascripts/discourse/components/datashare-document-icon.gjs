@@ -1,7 +1,5 @@
 import Component from "@glimmer/component";
-import { htmlSafe } from "@ember/template";
 import icon from "discourse/helpers/d-icon";
-
 
 export default class DatashareDocumentCard extends Component {
   get contentTypeIcon() {
@@ -35,7 +33,5 @@ export default class DatashareDocumentCard extends Component {
     return "file";
   }
 
-  <template>
-    {{icon this.contentTypeIcon}}
-  </template>
+  <template>{{icon this.contentTypeIcon}}</template>
 }
