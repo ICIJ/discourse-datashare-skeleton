@@ -38,7 +38,6 @@ module DiscourseDatashare
       scope = Topic
         .joins(:_custom_fields)
         .where(topic_custom_fields: { name: name, value: value })
-
       # For retro compatibility, we support filtering by index on if an index
       # is given. We want to find:
       #   * Topics with no 'datashare_document_index' custom field
@@ -53,9 +52,10 @@ module DiscourseDatashare
           .where("tcf.value IS NULL OR tcf.value = ?", index)
       end
 
-      # Load related posts and custom fields, 
-      # remove duplicates, and finally return the first match
-      scope.includes(:posts, :_custom_fields).distinct.first
+      # Get the first matching topic, including posts and custom fields
+      topic = scope.includes(:posts, :_custom_fields).distinct.first
+      # Finally, ensure the user can see the topic
+      @guardian.can_see_topic?(topic) ? topic : nil
     end
 
     def find_topic!
